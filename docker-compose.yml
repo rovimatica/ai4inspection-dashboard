@@ -1,0 +1,21 @@
+
+version: "3.8"
+
+name: ai4inspection_dashboard
+
+services:
+
+    grafana:
+        image: ai4inspection-dashboard:1.0
+        container_name: ai4inspection-dashboard
+        hostname: ai4inspection-dashboard
+        ports:
+            - 3001:3000
+        networks:
+            - fiware
+        restart: always
+
+networks:
+    fiware:
+        name: fiware_default
+        external: true
